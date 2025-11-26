@@ -1,7 +1,3 @@
-Note to self: can probably get rid of PHP logic and move to JS
+## Still heavily WIP !!
 
-To add:
-- Basically everything
-- Lots of fancy CSS
-- Content shells
-- etc
+I will gradually list here all of the features or details i would like to dig into / implement.
