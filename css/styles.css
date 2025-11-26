@@ -8,10 +8,15 @@
   src: url('../assets/fonts/SpaceMono-Bold.ttf')  format('truetype');
 }
 
+@font-face {
+  font-family: 'Google Sans Code';
+  src: url('../assets/fonts/GoogleSansCode-VariableFont_wght.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Space Mono Regular";
+  font-family: "Google Sans Code";
 }
 
 main {
@@ -26,6 +31,7 @@ header {
   display: flex;
   flex-direction: row;
   background-color: #fad274;
+  box-shadow: 0px 3px 10px #bbbbbb;
 }
 
 a {
@@ -49,7 +55,7 @@ i:hover {
 
 h1 {
   margin: 0 50px;
-  font-family: "Space Mono Bold";
+  font-weight: bold;
   font-size: 40px;
 }
 
@@ -65,7 +71,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: none; 
   background-color: transparent;
   transition: 0.15s;
 }
