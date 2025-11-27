@@ -7,11 +7,29 @@
   margin: 0;
   padding: 0;
   font-family: "Google Sans Code";
+  color: #fff;
+
+}
+
+:root {
+  --hue: 0;
+  --saturation: 90%;
+  --brightness: 60%;
+  --primary: hsl(var(--hue), var(--saturation), var(--brightness));
+  --primary-alt: hsl(calc(var(--hue) + 30), var(--saturation), var(--brightness));
+  --bg: hsl(var(--hue), 5%, 8%);
+  --header: hsl(var(--hue), 5%, 15%);
+  --box: hsl(var(--hue), 10%, 13%);
+  --box-alt: hsl(var(--hue), 15%, 20%);
+  accent-color: var(--primary);
+}
+
+body {
+  background-color: var(--bg);
 }
 
 main {
   margin: 0 50px;
-  /* background: ; */
 }
 
 header {
@@ -20,8 +38,8 @@ header {
   margin-bottom: 50px;
   display: flex;
   flex-direction: row;
-  background-color: #fad274;
-  box-shadow: 0px 3px 10px #bbbbbb;
+  background-color: var(--header);
+  box-shadow: 0px 3px 10px #0000001e;
 }
 
 a {
@@ -47,9 +65,20 @@ h1 {
   margin: 0 50px;
   font-weight: bold;
   font-size: 40px;
+  background-image: linear-gradient(0.25turn, var(--primary-alt), #ffffff);
+  color: transparent;
+  background-clip: text;
+}
+
+#links {
+  display: flex;
+  flex-direction: row;
 }
 
 #lang-buttons {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--box-alt);
   margin-left: auto;
   margin-right: 50px;
   display: flex;
@@ -86,13 +115,12 @@ footer {
     bottom: 0;
     background-color: #000000;
     height: fit-content;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 50px;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row;    
+    flex-direction: row;
+    gap: 10%;
 
     p {
         max-width: 90%;
