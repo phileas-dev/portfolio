@@ -63,12 +63,17 @@ h1 {
   align-items: center;
   border: none; 
   background-color: transparent;
-  transition: 0.15s;
+  transition: 0.1s;
 }
 
 #lang-buttons button:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(3deg);
+}
+
+#lang-buttons button:active {
+  filter: brightness(1.5);
+  transform: scale(1.2);
 }
 
 .lang-icon {width: 40px;}
