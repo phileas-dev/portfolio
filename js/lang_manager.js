@@ -6,15 +6,15 @@ Promise.all(
     langs.map(l =>
         fetch(`./lang/${l}.json`)
             .then(res => res.json())
-            .then(data => {
-                lang_data[l] = data;
-            })
+            .then(data => lang_data[l] = data)
     )
 ).then(() => {
     console.log("All languages loaded:", lang_data);
     // get lang setting or default to en
-    var savedLang = localStorage.getItem("lang") || "en"
-    updateLang(savedLang)   
+    const savedLang = localStorage.getItem("lang") || "en";
+    updateLang(savedLang);
+
+    document.documentElement.classList.remove("js-loading");
 });
 
 function updateLang(lang) {
@@ -36,5 +36,3 @@ document.querySelectorAll("#lang-buttons [data-lang]").forEach(btn => {
         updateLang(newLang);
     });
 });
-
-

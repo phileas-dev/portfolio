@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Google Sans Code';
   src: url('../assets/fonts/GoogleSansCode-VariableFont_wght.ttf');
+  font-display: swap;
 }
 
 * {
@@ -24,12 +25,24 @@
   accent-color: var(--primary);
 }
 
+html.js-loading body {
+  visibility: hidden;
+}
+
 body {
   background-color: var(--bg);
 }
 
 main {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
   margin: 0 50px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 header {
@@ -40,6 +53,12 @@ header {
   flex-direction: row;
   background-color: var(--header);
   box-shadow: 0px 3px 10px #0000001e;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 a {
@@ -55,7 +74,9 @@ i {
 }
 
 i:hover {
+  cursor: pointer;
   transform: scale(1.05) rotate(5deg);
+  color: #fff;
 }
 
 #linkedin {color: #0a66c2;}
@@ -73,6 +94,25 @@ h1 {
 #links {
   display: flex;
   flex-direction: row;
+  gap: 10px;
+}
+
+button {
+  background: none;
+}
+
+#colorReset{
+  transition: 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  border: none;
+  i {
+    font-size: 30px;
+    color: var(--primary);
+  }
+}
+
+#colorReset:hover {
+  transform: rotate(-180deg) scale(1.1);
+  i {color: #fff;}
 }
 
 #lang-buttons {
@@ -91,7 +131,6 @@ h1 {
   justify-content: center;
   align-items: center;
   border: none; 
-  background-color: transparent;
   transition: 0.1s;
 }
 
@@ -105,7 +144,7 @@ h1 {
   transform: scale(1.2);
 }
 
-.lang-icon {width: 40px;}
+.lang-icon {width: 40px; height: 28.8px;}
 
 [data-i18n] {transition: opacity 0.2s;}
 .updating [data-i18n] {opacity: 0.3;}

@@ -1,4 +1,6 @@
 const defaultHue = 158
+const defaultSat = 90
+const defaultBri = 60
 
 // hue slider functionality & storage
 slider = document.getElementById("col");
@@ -9,7 +11,7 @@ slider.addEventListener('input', () => {
 function updateCol(hue, updateSlider=true) {
     document.documentElement.style.setProperty('--hue', hue);
     window.sessionStorage.setItem("hue", hue);
-    setFaviconColor(`hsl(${hue}, 100%, 100%)`)
+    setFaviconColor(`hsl(${hue}, ${defaultSat}%, ${defaultBri}%)`)
     if (updateSlider) {
         slider.value = hue;
     }
@@ -21,12 +23,11 @@ window.addEventListener("load", () => {
     updateCol(storedColor || defaultHue);
 });
 
-//reset to default color when clicking icon
-// reset = document.getElementById("colorReset");
-// reset.addEventListener("click", () => {
-//     updateCol(defaultHue);
-// })
-
+// reset to default color when clicking icon
+reset = document.getElementById("colorReset");
+reset.addEventListener("click", () => {
+    updateCol(defaultHue);
+})
 
 
 function setFaviconColor(color) {
@@ -53,4 +54,3 @@ function setFaviconColor(color) {
 
     document.head.appendChild(link);
 }
-

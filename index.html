@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        html.js-loading body {opacity: 0;}
+        body {transition: opacity 0.2s ease-out;}
+    </style>
+    <script>
+        document.documentElement.classList.add("js-loading");
+        document.documentElement.style.setProperty(
+            "--hue",
+            sessionStorage.getItem("hue") || 158
+        );
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title lang-key="title"></title>
+    <meta name="description" content="My portfolio website">
+    <meta content="Philéas SIBIEN" property="og:title">
+    <meta content="My portfolio website" property="og:description">
+    <meta content="https://psibien.dev" property="og:url">
+    <meta content="#3DF5B1" data-react-helmet="true" name="theme-color">
+    <title lang-key="title">Philéas SIBIEN - Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="canonical" href="https://psibien.dev/">
     <link id="favicon" rel="icon" type="image/svg+xml" href="assets/icon.svg">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
     <!-- <link rel="icon" type="image/x-icon" href="assets/fav.ico"> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
 
 <body>
     <header>
         <h1>Philéas SIBIEN</h1>
         <div id="links">
-            <a href="https://www.linkedin.com/in/phil%C3%A9as-sibien/" target="_blank"><i id="linkedin" class="ph-fill ph-linkedin-logo"></i></a>
-            <a href="https://github.com/phileas-dev/" target="_blank"><i id="github" class="ph-fill ph-github-logo"></i></a>
+            <a aria-label="My LinkedIn page" href="https://www.linkedin.com/in/phil%C3%A9as-sibien/" target="_blank"><i id="linkedin" class="ph-fill ph-linkedin-logo"></i></a>
+            <a aria-label="My GitHub profile" href="https://github.com/phileas-dev/" target="_blank"><i id="github" class="ph-fill ph-github-logo"></i></a>
         </div>
         <div id="lang-buttons">
-            <button data-lang="en" aria-label="English"><img class="lang-icon" src="./assets/flags/GB.png" draggable="false"></button>
-            <button data-lang="fr" aria-label="French"><img class="lang-icon" src="./assets/flags/FR.png" draggable="false"></button>
-            <button data-lang="es" aria-label="Spanish"><img class="lang-icon" src="./assets/flags/ES.png" draggable="false"></button>
+            <button data-lang="en" aria-label="English"><img alt="english" class="lang-icon" src="./assets/flags/GB.png" draggable="false"></button>
+            <button data-lang="fr" aria-label="French"><img alt="french" class="lang-icon" src="./assets/flags/FR.png" draggable="false"></button>
+            <button data-lang="es" aria-label="Spanish"><img alt="spanish" class="lang-icon" src="./assets/flags/ES.png" draggable="false"></button>
         </div>
     </header>
 
     <main>
-        <p lang-key="main"></p>
-
-
+        <p lang-key="main">Welcome to my portfolio !</p>
     </main>
 
     <footer>
-        <p lang-key="footer_message"></p>
-        <input type="range" id="col" name="col" min="0" max="359" value="158">
+        <p lang-key="footer_message">Philéas SIBIEN 2025 - All rights reserved</p>
+        <div class="wrapper">
+            <button aria-label="Reset color" id="colorReset"><i class="ph-fill ph-arrow-counter-clockwise"></i></button>
+            <input aria-label="Color slider" type="range" id="col" name="col" min="0" max="359" value="158">
+        </div>
     </footer>
 
     <script src="js/lang_manager.js"></script>
