@@ -11,7 +11,9 @@ slider.addEventListener('input', () => {
 function updateCol(hue, updateSlider=true) {
     document.documentElement.style.setProperty('--hue', hue);
     window.sessionStorage.setItem("hue", hue);
-    setFaviconColor(`hsl(${hue}, ${defaultSat}%, ${defaultBri}%)`)
+    setFaviconColor(`hsl(${hue - 345}, ${defaultSat}%, ${defaultBri}%)`)
+    // the alt hue is at +15 but computing +15 makes the color shift completely break
+    // whilst substracting works for whatever reason
     if (updateSlider) {
         slider.value = hue;
     }
