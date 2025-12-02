@@ -1,29 +1,28 @@
 const lang_data = {};
 const langs = ['en', 'fr', 'es'];
 
-// load all language files
-Promise.all(
-    langs.map(l =>
-        fetch(`./lang/${l}.json`)
-            .then(res => res.json())
-            .then(data => lang_data[l] = data)
-    )
-).then(() => {
-    console.log("All languages loaded:", lang_data);
-    // get lang setting or default to en
-    const savedLang = localStorage.getItem("lang") || "en";
-    updateLang(savedLang);
+// load merged languages file
+fetch('./lang.json')
+    .then(res => res.json())
+    .then(data => {
+        Object.assign(lang_data, data);
+        console.log("Languages loaded:", lang_data);
 
-    document.documentElement.classList.remove("js-loading");
+        const savedLang = localStorage.getItem("lang") || "en";
+        updateLang(savedLang);
+
+        document.documentElement.classList.remove("js-loading");
 });
 
+
 function updateLang(lang) {
-    var string_count = 0;
+    let string_count = 0;
     localStorage.setItem("lang", lang);
-    document.querySelector("html").setAttribute("lang", localStorage.getItem("lang"));
+    document.documentElement.setAttribute("lang", lang);
+
     document.querySelectorAll("[lang-key]").forEach(el => {
-        key = el.getAttribute("lang-key");
-        el.textContent = (lang_data[lang][key]);
+        const key = el.getAttribute("lang-key");
+        el.textContent = (lang_data[key][lang]);
         string_count++;
     });
     console.log(`Switched language to ${lang} (${string_count} strings updated)`);

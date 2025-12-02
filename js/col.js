@@ -19,7 +19,7 @@ function updateCol(hue, updateSlider=true) {
     }
 }
 
-//storage loader on window load
+// storage loader on window load
 storedColor = sessionStorage.getItem("hue");
 window.addEventListener("load", () => {
     updateCol(storedColor || defaultHue);
@@ -49,7 +49,7 @@ function setFaviconColor(color) {
     link.type = 'image/svg+xml';
     link.href = url;
 
-    // Remove old favicon if it exists
+    // remove old favicon if it exists
     document.head.querySelectorAll('link[rel="icon"]').forEach(el => {
     if (el !== link) el.remove();
     });
