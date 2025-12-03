@@ -9,7 +9,7 @@ The flag assets were borrowed from the [osu-resources](https://github.com/ppy/os
 ### Here's how the language system works:
 
 Language strings are kept in [/lang](/lang/), with one json file per language and key-value pairs. The key names are directly referenced in html attributes to populate text fields.
-The language files can be merged into [`lang.json`](/lang.json) with the builder python script at [merge_lang.py](/tools/merge_lang.py)
+The language files can be merged into [`lang.json`](/lang.json) with the [builder python script](/tools/merge_lang.py).
 This makes adding, removing or editing languages a trivial process.
 
 **Do note that the language file names should match proper language subtags.** A [list](https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags) is available on Wikipedia.
