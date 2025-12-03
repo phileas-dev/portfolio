@@ -39,7 +39,7 @@ function populateLangSelector() {
         const img = document.createElement("img");
         img.alt = lang_data.name[lang];
         img.classList.add("lang-icon");
-        img.src = `./assets/flags/${lang_data.flag[lang]}.png`;
+        img.src = `./assets/flags_webp/${lang_data.flag[lang]}.webp`;
         img.draggable = false;
         img.onerror = () => {
             img.onerror = null;

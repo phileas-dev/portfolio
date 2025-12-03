@@ -1,5 +1,6 @@
 import os
 import json
+
 DEFAULT_PATH = "./lang"
 OUTPUT_FILE = "./lang.json"
 
