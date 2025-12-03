@@ -1,4 +1,5 @@
 const lang_data = {};
+const flag_path = "./assets/flags_webp/";
 defaultLang = "gb"
 
 // load merged languages file
@@ -39,11 +40,11 @@ function populateLangSelector() {
         const img = document.createElement("img");
         img.alt = lang_data.name[lang];
         img.classList.add("lang-icon");
-        img.src = `./assets/flags_webp/${lang_data.flag[lang]}.webp`;
+        img.src = `${flag_path}${lang_data.flag[lang]}.webp`;
         img.draggable = false;
         img.onerror = () => {
             img.onerror = null;
-            img.src = "./assets/flags/__.png";
+            img.src = `${flag_path}__.webp`;
         };
 
         button.appendChild(img);

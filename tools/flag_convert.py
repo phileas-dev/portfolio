@@ -8,7 +8,7 @@ LANG_PATH = "./lang"
 
 used_flags = [json.load(open(os.path.join(LANG_PATH, fn)))["flag"]
          for fn in os.listdir(LANG_PATH) if fn.endswith(".json")]
-
+used_flags.append("__")
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
