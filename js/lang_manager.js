@@ -22,7 +22,8 @@ function updateLang(lang) {
 
     document.querySelectorAll("[lang-key]").forEach(el => {
         const key = el.getAttribute("lang-key");
-        el.textContent = (lang_data[key][lang]);
+        const translation = lang_data?.[key]?.[lang] ?? el.textContent;
+        el.textContent = translation
         string_count++;
     });
     console.log(`Switched language to ${lang} (${string_count} strings updated)`);
