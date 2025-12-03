@@ -9,7 +9,7 @@ fetch('./lang.json')
         
         const savedLang = localStorage.getItem("lang") || "gb";
         updateLang(savedLang);
-        populateLangSelector()
+        populateLangSelector();
         document.documentElement.classList.remove("js-loading");
 });
 
@@ -50,4 +50,4 @@ function populateLangSelector() {
         langDiv.appendChild(button);
 
     })
-}
+};
