@@ -1,4 +1,21 @@
 {
+    "meta": {
+        "langs": [
+            "en",
+            "es",
+            "fr"
+        ]
+    },
+    "name": {
+        "en": "English",
+        "es": "Español",
+        "fr": "Français"
+    },
+    "flag": {
+        "en": "GB",
+        "es": "ES",
+        "fr": "FR"
+    },
     "title": {
         "en": "Philéas SIBIEN - Portfolio",
         "es": "Philéas SIBIEN - Portfolio",

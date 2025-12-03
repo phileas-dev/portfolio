@@ -1,7 +1,7 @@
 import os
 import json
 DEFAULT_PATH = "./lang"
-OUTPUT_FILE = "lang.json"
+OUTPUT_FILE = "./lang.json"
 
 
 files = {}
@@ -10,7 +10,7 @@ for file in os.listdir(path=DEFAULT_PATH):
         files[file.split('.')[0]] = f.read()
 
 
-merge = {}
+merge = {"meta": {"langs": list(files.keys())}}
 strings_count = 0
 for lang, data in files.items():
     data_dict = json.loads(data)

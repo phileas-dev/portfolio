@@ -1,16 +1,15 @@
 const lang_data = {};
-const langs = ['en', 'fr', 'es'];
+defaultLang = "gb"
 
 // load merged languages file
 fetch('./lang.json')
     .then(res => res.json())
     .then(data => {
         Object.assign(lang_data, data);
-        console.log("Languages loaded:", lang_data);
-
-        const savedLang = localStorage.getItem("lang") || "en";
+        
+        const savedLang = localStorage.getItem("lang") || "gb";
         updateLang(savedLang);
-
+        populateLangSelector()
         document.documentElement.classList.remove("js-loading");
 });
 
@@ -28,10 +27,27 @@ function updateLang(lang) {
     console.log(`Switched language to ${lang} (${string_count} strings updated)`);
 };
 
-// language button functionality
-document.querySelectorAll("#lang-buttons [data-lang]").forEach(btn => {
-    btn.addEventListener("click", () => {
-        var newLang = btn.getAttribute("data-lang");
-        updateLang(newLang);
-    });
-});
+function populateLangSelector() {
+    const langDiv = document.getElementById("lang-buttons");
+
+    lang_data.meta.langs.forEach(lang => {
+        const button = document.createElement("button");
+        button.setAttribute("aria-label", lang_data.name[lang]);
+        button.onclick = () => updateLang(lang);
+        button.lang = lang;
+
+        const img = document.createElement("img");
+        img.alt = lang_data.name[lang];
+        img.classList.add("lang-icon");
+        img.src = `./assets/flags/${lang_data.flag[lang]}.png`;
+        img.draggable = false;
+        img.onerror = () => {
+            img.onerror = null;
+            img.src = "./assets/flags/__.png";
+        };
+
+        button.appendChild(img);
+        langDiv.appendChild(button);
+
+    })
+}
