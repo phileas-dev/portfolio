@@ -1,6 +1,6 @@
 const lang_data = {};
 const flag_path = "./assets/flags_webp/";
-defaultLang = "gb"
+defaultLang = "en"
 
 // load merged languages file
 fetch('./lang.json')

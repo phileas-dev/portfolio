@@ -99,6 +99,12 @@ header a {
   animation-timeline: view(50% auto);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .scrollFade {
+    animation: none;
+  }
+}
+
 @keyframes text-appear {
   0% {
     opacity: 0;
