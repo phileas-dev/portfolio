@@ -8,8 +8,7 @@
   margin: 0;
   padding: 0;
   font-family: "Google Sans Code";
-  color: #fff;
-
+  caret-color: transparent;
 }
 
 :root {
@@ -38,9 +37,9 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  gap: 10%; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%; 
   opacity: 0;
   animation: fadeIn 0.5s forwards;
   margin: 0 50px 50vh  50px;
@@ -69,6 +68,77 @@ header a {
   text-align: center;
 }
 
+#sysinfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--box);
+  margin: 0 auto;
+}
+
+#sysinfo > div {
+  display: flex;
+  align-items: center;
+}
+
+#sysinfo i {
+  font-size: 30px;
+  margin-right: 2px;
+  transition: none;
+}
+
+#sysinfo i:hover {
+  transform: none;
+  cursor: default;
+}
+
+.ph-thermometer-simple {color: hsl(32, 61%, 54%);}
+.ph-disc {color: hsl(108, 61%, 54%);}
+.ph-memory {color: hsl(172, 61%, 54%);}
+.ph-clock {color: hsl(293, 61%, 54%);}
+
+#links {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding: 0 10px;
+  background-color: var(--box-alt);
+  gap: 10px;
+}
+
+#lang-buttons {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--box);
+  margin-left: auto;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#lang-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none; 
+  transition: 0.1s;
+}
+
+#lang-buttons button:hover {
+  cursor: pointer;
+  transform: scale(1.1) rotate(3deg);
+}
+
+#lang-buttons button:active {
+  filter: brightness(1.5);
+  transform: scale(1.2);
+}
+
+.lang-icon {width: 40px; height: 28.8px;}
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -80,12 +150,17 @@ header a {
   border-radius: 20px;
   padding: 20px;
   margin: 20px 0;
-  width: calc(50% - 40px);
+  width: calc(100% - 40px);
   border: var(--box-border) solid 1px;
+  /* box-shadow: inset 0 1px 2px #ffffff86; */
 
   h3 {
     margin-bottom: 15px;
   }
+}
+
+#contact {
+  height: 20vh;
 }
 
 .scrollFade {
@@ -145,11 +220,11 @@ i {
 i:hover {
   cursor: pointer;
   transform: scale(1.05) rotate(5deg);
-  color: #fff;
 }
 
-#linkedin {color: #0a66c2;}
-#github {color: #000000;}
+.ph-linkedin-logo {color: #0a66c2;}
+.ph-github-logo {color: #000000;}
+.ph-envelope-simple {color: #afafaf;}
 
 h1 {
   margin: 0 50px;
@@ -164,11 +239,6 @@ h2, h3 {
   color: var(--text-main);
 }
 
-#links {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
 
 button {
   background: none;
@@ -188,36 +258,6 @@ button {
   i {color: #fff;}
 }
 
-#lang-buttons {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--box-alt);
-  margin-left: auto;
-  margin-right: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-#lang-buttons button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none; 
-  transition: 0.1s;
-}
-
-#lang-buttons button:hover {
-  cursor: pointer;
-  transform: scale(1.1) rotate(3deg);
-}
-
-#lang-buttons button:active {
-  filter: brightness(1.5);
-  transform: scale(1.2);
-}
-
-.lang-icon {width: 40px; height: 28.8px;}
 
 [data-i18n] {transition: opacity 0.2s;}
 .updating [data-i18n] {opacity: 0.3;}
