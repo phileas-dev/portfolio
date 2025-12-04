@@ -1,14 +1,10 @@
-## Still heavily WIP !!
-
-I will gradually list here all of the features or details i would like to dig into / implement.
-
+### Resources used:
 
 The flag assets were borrowed from the [osu-resources](https://github.com/ppy/osu-resources/tree/master/osu.Game.Resources/Textures/Flags) repo, more information about how they were generated can be found there.
 
 Icons were imported from [Phosphor Icons](https://github.com/phosphor-icons/web).
 
 Fonts used: [Google Sans Code](https://fonts.google.com/specimen/Google+Sans+Code)
-
 
 ### Here's how the language system works:
 
@@ -36,3 +32,7 @@ pip install -r requirements.txt
 # then:
 python .\tools\main.py
 ```
+### To-do:
+
+I will gradually list here all of the features or details i would like to dig into / implement.
+- Responsive CSS (mobile support)
