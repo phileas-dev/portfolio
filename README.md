@@ -28,7 +28,11 @@ Under [/tools](/tools/), you will find a handful of Python scripts:
 To use these tools, you can run the following commands (Windows):
 
 ```sh
-python -m venv venv
+# provided you're already in the repo root folder:
+python -m venv .venv
 venv\Scripts\activate
 pip install -r requirements.txt
+
+# then:
+python .\tools\main.py
 ```
