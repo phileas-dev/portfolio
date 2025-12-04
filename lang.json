@@ -23,7 +23,22 @@
     },
     "s_footer_message": {
         "en": "Philéas SIBIEN 2025 - All rights reserved",
-        "es": "Philéas SIBIEN 2025 - Todos los derechos reservados ",
+        "es": "Philéas SIBIEN 2025 - Todos los derechos reservados",
         "fr": "Philéas SIBIEN 2025 - Tous droits réservés"
+    },
+    "s_box1_1": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+        "fr": "Oh la la je mange du pain et des baguettes c'est "
+    },
+    "s_box1_link": {
+        "en": "tempor",
+        "es": "tempor",
+        "fr": "fou"
+    },
+    "s_box1_2": {
+        "en": " incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "es": " incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fr": " et puis là j'écris une phrase hyper longue. Je dois écrire un paragraphe long "
     }
 }

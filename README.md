@@ -16,3 +16,19 @@ Language strings are kept in [/lang](/lang/), with one json file per language an
 The language files can be merged into [`lang.json`](/lang.json) with the [builder python script](/tools/merge_lang.py) and the language selector in the header is dynamically constructed using [lang_manager.js](/js/lang_manager.js) aswell as [flag_convert.py](/tools/flag_convert.py).
 This makes adding, removing or editing languages a trivial process.
 Further information on how to format these json files can be found [here](./doc/LANG_FORMATTING.md).
+
+### Helper tools:
+
+Under [/tools](/tools/), you will find a handful of Python scripts:
+- [main.py](/tools/main.py) runs every other script and should be configured and used to update the website after changing anything with the language files.
+- [merge_lang.py](/tools/merge_lang.py) creates [lang.json](/lang.json) from every file in [/lang](/lang/). The file is then used by [lang_manager.js](/js/lang_manager.js) (explained previously).
+- [flag_convert.py](/tools/flag_convert.py) checks which languages exist, then loops through [flag assets](/assets/flags/) and picks the proper flags, then converts them to webp to be used from [/assets/flags_webp](/assets/flags_webp/) to display the language selector.
+- [populate_html.py](/tools/populate_html.py) is used to update every translatable string from a chosen default language (`en` in this case). This is mainly here for browser visibility as the index.html page should be populated with text content.
+
+To use these tools, you can run the following commands (Windows):
+
+```sh
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```

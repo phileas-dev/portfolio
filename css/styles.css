@@ -14,15 +14,18 @@
 
 :root {
   --hue: 0;
+  --hue-alt: calc(var(--hue) + 30);
   --saturation: 90%;
   --brightness: 60%;
   --primary: hsl(var(--hue), var(--saturation), var(--brightness));
-  --primary-alt: hsl(calc(var(--hue) + 30), var(--saturation), var(--brightness));
+  --primary-alt: hsl(var(--hue-alt), var(--saturation), var(--brightness));
   --bg: hsl(var(--hue), 5%, 8%);
   --header: hsl(var(--hue), 5%, 15%);
   --box: hsl(var(--hue), 10%, 13%);
   --box-alt: hsl(var(--hue), 15%, 20%);
-  --text-p: hsl(0, 0%, 85%);
+  --box-border: hsl(var(--hue-alt), 40%, 40%);
+  --text-main: hsl(0, 0%, 95%);
+  --text-p: hsl(0, 0%, 80%);
   accent-color: var(--primary-alt);
 }
 
@@ -57,6 +60,7 @@ header {
   flex-direction: row;
   background-color: var(--header);
   box-shadow: 0px 5px 10px #00000033;
+  border-bottom: var(--box-border) solid 1px;
 }
 
 header a {
@@ -75,8 +79,9 @@ header a {
   background-color: var(--box);
   border-radius: 20px;
   padding: 20px;
-  margin: 15px 0;
+  margin: 20px 0;
   width: calc(50% - 40px);
+  border: var(--box-border) solid 1px;
 
   h3 {
     margin-bottom: 15px;
@@ -97,12 +102,10 @@ header a {
 @keyframes text-appear {
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(70px);
   }
   70% {
     opacity: 1;
-  }
-  100% {
     transform: translateY(0);
   }
 }
@@ -119,7 +122,7 @@ header a {
   }
 }
 
-p {
+p, span {
   color: var(--text-p);
 }
 
@@ -146,9 +149,13 @@ h1 {
   margin: 0 50px;
   font-weight: bold;
   font-size: 40px;
-  background-image: linear-gradient(0.25turn, var(--primary-alt), #ffffff);
+  background-image: linear-gradient(0.25turn, var(--primary-alt), hsl(var(--hue-alt), 90%, 90%));
   color: transparent;
   background-clip: text;
+}
+
+h2, h3 {
+  color: var(--text-main);
 }
 
 #links {
