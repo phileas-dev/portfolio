@@ -22,7 +22,8 @@
   --header: hsl(var(--hue), 5%, 15%);
   --box: hsl(var(--hue), 10%, 13%);
   --box-alt: hsl(var(--hue), 15%, 20%);
-  accent-color: var(--primary);
+  --text-p: hsl(0, 0%, 85%);
+  accent-color: var(--primary-alt);
 }
 
 html.js-loading body {
@@ -34,9 +35,12 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 10%; 
   opacity: 0;
   animation: fadeIn 0.5s forwards;
-  margin: 0 50px;
+  margin: 0 50px 50vh  50px;
 }
 
 @keyframes fadeIn {
@@ -52,7 +56,13 @@ header {
   display: flex;
   flex-direction: row;
   background-color: var(--header);
-  box-shadow: 0px 3px 10px #0000001e;
+  box-shadow: 0px 5px 10px #00000033;
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .wrapper {
@@ -61,11 +71,61 @@ header {
   gap: 10px;
 }
 
+.box {
+  background-color: var(--box);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px 0;
+  width: calc(50% - 40px);
+
+  h3 {
+    margin-bottom: 15px;
+  }
+}
+
+.scrollFade {
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 100vh;
+}
+
+.scrollFade * {
+  animation: blur-appear linear both;
+  animation-timeline: view(50% auto);
+}
+
+@keyframes text-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blur-appear {
+  0% {
+    filter: blur(10px);
+  }
+  20% {
+    filter: blur(2px);
+  }
+  50% {
+    filter: blur(0px);
+  }
+}
+
+p {
+  color: var(--text-p);
+}
+
 a {
-  display: flex;
-  align-items: center;
-  text-align: center;
   text-decoration: none;
+  color: var(--primary-alt);
 }
 
 i {
@@ -106,7 +166,7 @@ button {
   border: none;
   i {
     font-size: 30px;
-    color: var(--primary);
+    color: var(--primary-alt);
   }
 }
 
@@ -150,20 +210,20 @@ button {
 .updating [data-i18n] {opacity: 0.3;}
 
 footer {
-    position: fixed;
-    bottom: 0;
-    background-color: #000000;
-    height: fit-content;
-    padding: 10px 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10%;
-
-    p {
-        max-width: 90%;
-        font-size: 12px;
-        color: #ffffff;
-    }
+  position: fixed;
+  bottom: 0;
+  background-color: #000000;
+  height: fit-content;
+  padding: 10px 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10%;
+  box-shadow: 0px -5px 10px #00000033;
+  p {
+    max-width: 90%;
+    font-size: 12px;
+    color: #ffffff;
+  }
 }
