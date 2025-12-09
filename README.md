@@ -2,7 +2,7 @@
 
 ![Raspberry Pi](https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
 
-### Resources used:
+## Resources used:
 
 The flag assets were borrowed from the [osu-resources](https://github.com/ppy/osu-resources/tree/master/osu.Game.Resources/Textures/Flags) repo, more information about how they were generated can be found there.
 
@@ -10,14 +10,14 @@ Icons were imported from [Phosphor Icons](https://github.com/phosphor-icons/web)
 
 Fonts used: [Google Sans Code](https://fonts.google.com/specimen/Google+Sans+Code)
 
-### Here's how the language system works:
+## Here's how the language system works:
 
 Language strings are kept in [/lang](/lang/), with one json file per language and key-value pairs. The key names are directly referenced in html attributes to populate text fields.
 The language files can be merged into [`lang.json`](/lang.json) with the [builder python script](/tools/merge_lang.py) and the language selector in the header is dynamically constructed using [lang_manager.js](/js/lang_manager.js) aswell as [convert_flag.py](/tools/convert_flag.py).
 This makes adding, removing or editing languages a trivial process.
 Further information on how to format these json files can be found [here](./doc/LANG_FORMATTING.md).
 
-### Helper tools:
+## Helper tools:
 
 Under [/tools](/tools/), you will find a handful of Python scripts:
 - [main.py](/tools/main.py) runs every other script and should be configured and used to update the website after changing anything with the language files.
@@ -36,7 +36,12 @@ pip install -r requirements.txt
 # then:
 python .\tools\main.py
 ```
-### To-do:
+
+## The Backend:
+
+The website document root is equivalent to the repository (without cache and git files) and is distributed by an Apache server through Cloudflare. For the system information, I set up a custom API endpoint using Python + [Flask](https://github.com/pallets/flask) that returns a non-cached JSON object at [/api/sysinfo](https://psibien.dev/api/sysinfo), which is then fetched and displayed by [sysinfo.js](/js/sysinfo.js). This all runs on a tiny, self-hosted [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/).
+
+## To-do:
 
 I will gradually list here all of the features or details i would like to dig into / implement.
 - Responsive CSS (mobile support)
