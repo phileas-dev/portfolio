@@ -13,13 +13,7 @@ async function updateTemp() {
     }
 }
 
-async function updateCommit() {
-    const commitText = await showLatestCommit();
-    document.getElementById("commit").textContent = commitText;
-}
-
 setInterval(updateTemp, update_delay);
-setInterval(updateCommit, 300000);
 
 function formatUptime(seconds) {
     const days = Math.floor(seconds / 86400);
