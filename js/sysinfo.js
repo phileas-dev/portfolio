@@ -6,10 +6,9 @@ async function updateTemp() {
     if (fetch_data) {
         const res = await fetch(`${api_endpoint}?ts=${Date.now()}`);
         const data = await res.json();
-        const temp = Number(data.cpu_temp).toFixed(2);
-        document.getElementById("temp").textContent = temp + "°C";
-        document.getElementById("disk").textContent = data.disk.percent + "%";
-        document.getElementById("mem").textContent = data.memory.percent + "%";
+        document.getElementById("temp").textContent = data.cpu_temp.toFixed(2) + "°C";
+        document.getElementById("disk").textContent = data.disk.percent.toFixed(1) + "%";
+        document.getElementById("mem").textContent = data.memory.percent.toFixed(1) + "%";
         document.getElementById("uptime").textContent = formatUptime(data.uptime_sec);
     }
 }
