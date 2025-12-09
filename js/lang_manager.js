@@ -8,7 +8,7 @@ fetch('./lang.json')
     .then(data => {
         Object.assign(lang_data, data);
         
-        const savedLang = localStorage.getItem("lang") || "gb";
+        const savedLang = localStorage.getItem("lang") || defaultLang;
         updateLang(savedLang);
         populateLangSelector();
         document.documentElement.classList.remove("js-loading");
