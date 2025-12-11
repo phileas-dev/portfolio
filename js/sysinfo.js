@@ -2,6 +2,8 @@ update_delay = 2500;    // in milliseconds
 api_endpoint = "https://psibien.dev/api/sysinfo";
 var fetch_data = true;
 
+
+// fetch API endpoint and populate content
 async function updateTemp() {
     if (fetch_data) {
         const res = await fetch(`${api_endpoint}?ts=${Date.now()}`);
@@ -15,6 +17,8 @@ async function updateTemp() {
 
 setInterval(updateTemp, update_delay);
 
+
+// format seconds to proper time
 function formatUptime(seconds) {
     const days = Math.floor(seconds / 86400);
     seconds %= 86400;

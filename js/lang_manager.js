@@ -2,6 +2,7 @@ const lang_data = {};
 const flag_path = "./assets/flags_webp/";
 defaultLang = "en"
 
+
 // load merged languages file
 fetch('./lang.json')
     .then(res => res.json())
@@ -15,6 +16,7 @@ fetch('./lang.json')
 });
 
 
+// replace textContent in each translatable element and save new lang in localstorage
 function updateLang(lang) {
     let string_count = 0;
     localStorage.setItem("lang", lang);
@@ -29,6 +31,8 @@ function updateLang(lang) {
     console.log(`Switched language to ${lang} (${string_count} strings updated)`);
 };
 
+
+// create language buttons depending on how many langs supported
 function populateLangSelector() {
     const langDiv = document.getElementById("lang-buttons");
 
