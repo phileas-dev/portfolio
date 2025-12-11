@@ -54,7 +54,7 @@ main {
 header {
   position: sticky;
   top: 0;
-  z-index: 5x²;
+  z-index: 5;
   width: 100%;
   padding: 30px 0px;
   margin-bottom: 50px;
