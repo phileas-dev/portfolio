@@ -2,7 +2,6 @@ from PIL import Image
 import os
 import json
 
-
 def generate_webp_flags(lang_path: str, asset_path: str, output_path: str):
     # figure out which flags to convert based on filenames in lang path
     used_flags = [json.load(open(os.path.join(lang_path, fn)))["flag"]

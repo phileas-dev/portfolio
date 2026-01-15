@@ -1,4 +1,4 @@
-from tools import convert_flag, merge_lang, populate_html
+import convert_flag, merge_lang, populate_html
 
 LANG_PATH = "./lang"
 OUTPUT_LANG_FILE = "./lang.json"
