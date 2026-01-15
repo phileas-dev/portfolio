@@ -3,10 +3,7 @@ const defaultSat = 90
 const defaultBri = 60
 
 // hue slider functionality & storage
-slider = document.getElementById("col");
-slider.addEventListener('input', () => {
-    updateCol(slider.value, updateSlider=false);
-});
+col.addEventListener('input', () => {updateCol(col.value, updateSlider=false);});
 
 function updateCol(hue, updateSlider=true) {
     document.documentElement.style.setProperty('--hue', hue);
@@ -15,21 +12,16 @@ function updateCol(hue, updateSlider=true) {
     // the alt hue is at +15 but computing +15 makes the color shift completely break
     // whilst substracting works for whatever reason
     if (updateSlider) {
-        slider.value = hue;
+        col.value = hue;
     };
 };
 
 // storage loader on window load
 storedColor = sessionStorage.getItem("hue");
-window.addEventListener("load", () => {
-    updateCol(storedColor || defaultHue);
-});
+window.addEventListener("load", () => {updateCol(storedColor || defaultHue);});
 
 // reset to default color when clicking icon
-reset = document.getElementById("colorReset");
-reset.addEventListener("click", () => {
-    updateCol(defaultHue);
-});
+colorReset.addEventListener("click", () => {updateCol(defaultHue);});
 
 // create favicon once
 const faviconLink = document.getElementById('favicon') || (() => {

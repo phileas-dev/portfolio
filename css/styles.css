@@ -102,6 +102,10 @@ header a {
 .ph-memory {color: hsl(172, 61%, 54%);}
 .ph-clock {color: hsl(293, 61%, 54%);}
 
+.ph-linkedin-logo {color: #0a66c2;}
+.ph-github-logo {color: #000000;}
+.ph-envelope-simple {color: #afafaf;}
+
 #links {
   display: flex;
   flex-direction: row;
@@ -111,7 +115,7 @@ header a {
   gap: 10px;
 }
 
-#lang-buttons {
+#lang_buttons {
   padding: 10px;
   border-radius: 10px;
   background-color: var(--box);
@@ -122,7 +126,7 @@ header a {
   gap: 10px;
 }
 
-#lang-buttons button {
+#lang_buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,12 +134,12 @@ header a {
   transition: 0.1s;
 }
 
-#lang-buttons button:hover {
+#lang_buttons button:hover {
   cursor: pointer;
   transform: scale(1.1) rotate(3deg);
 }
 
-#lang-buttons button:active {
+#lang_buttons button:active {
   filter: brightness(1.5);
   transform: scale(1.2);
 }
@@ -225,9 +229,6 @@ i:hover {
   transform: scale(1.05) rotate(5deg);
 }
 
-.ph-linkedin-logo {color: #0a66c2;}
-.ph-github-logo {color: #000000;}
-.ph-envelope-simple {color: #afafaf;}
 
 h1 {
   margin: 0 50px;
@@ -260,7 +261,6 @@ button {
   transform: rotate(-180deg) scale(1.1);
   i {color: #fff;}
 }
-
 
 [data-i18n] {transition: opacity 0.2s;}
 .updating [data-i18n] {opacity: 0.3;}

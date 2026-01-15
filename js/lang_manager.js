@@ -1,6 +1,6 @@
 const lang_data = {};
 const flag_path = "./assets/flags_webp/";
-defaultLang = "en"
+const defaultLang = "en"
 
 
 // load merged languages file
@@ -34,8 +34,6 @@ function updateLang(lang) {
 
 // create language buttons depending on how many langs supported
 function populateLangSelector() {
-    const langDiv = document.getElementById("lang-buttons");
-
     lang_data.meta.langs.forEach(lang => {
         const button = document.createElement("button");
         button.setAttribute("aria-label", lang_data.name[lang]);
@@ -53,7 +51,7 @@ function populateLangSelector() {
         };
 
         button.appendChild(img);
-        langDiv.appendChild(button);
+        lang_buttons.appendChild(button);
 
     })
 };

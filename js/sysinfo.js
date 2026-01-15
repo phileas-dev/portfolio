@@ -1,5 +1,5 @@
-update_delay = 2500;    // in milliseconds
-api_endpoint = "https://psibien.dev/api/sysinfo";
+const update_delay = 2500;    // in milliseconds
+const api_endpoint = "https://psibien.dev/api/sysinfo";
 var fetch_data = true;
 
 
@@ -8,10 +8,10 @@ async function updateTemp() {
     if (fetch_data) {
         const res = await fetch(`${api_endpoint}?ts=${Date.now()}`);
         const data = await res.json();
-        document.getElementById("temp").textContent = data.cpu_temp.toFixed(2) + "°C";
-        document.getElementById("disk").textContent = data.disk.percent.toFixed(1) + "%";
-        document.getElementById("mem").textContent = data.memory.percent.toFixed(1) + "%";
-        document.getElementById("uptime").textContent = formatUptime(data.uptime_sec);
+        temp.textContent = data.cpu_temp.toFixed(2) + "°C";
+        disk.textContent = data.disk.percent.toFixed(1) + "%";
+        mem.textContent = data.memory.percent.toFixed(1) + "%";
+        uptime.textContent = formatUptime(data.uptime_sec);
     }
 }
 
